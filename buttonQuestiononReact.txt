@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 export function App(props) {
   const nameArray = ["Aman", "harish", "Rahul"]
-  let [buttonName, setButtonName] = useState("Click me")
+  let [buttonName, setButtonName] = useState(props.initialName || "Click me")
   function changeName() {
     setButtonName(prev => nameArray[(nameArray.indexOf(prev) + 1) % nameArray.length]);
   }
