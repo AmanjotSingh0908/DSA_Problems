@@ -1,0 +1,18 @@
+import React from 'react';
+import {useState} from 'react';
+export function App(props) {
+  const nameArray = ["Aman", "harish", "Rahul"]
+  let [buttonName, setButtonName] = useState("Click me")
+  function changeName() {
+    setButtonName(prev => nameArray[(nameArray.indexOf(prev) + 1) % nameArray.length]);
+  }
+  return (
+    <div className='App'>
+      <h1>Hello React.</h1>
+      <button onClick={changeName}>{buttonName}</button>
+    </div>
+  );
+}
+
+//to change name on each Click
+//CODED ON playcode.io/react

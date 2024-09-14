@@ -1,10 +1,10 @@
-// function kthSmallest(arr, k) {
-//     arr.sort((a,b) => a-b);
-//     return arr[k-1]       
-// }
+//Approach 1
+function kthSmallest(arr, k) {
+    arr.sort((a,b) => a-b);
+    return arr[k-1]       
+}
 
 //Approach 2
-
 //Using Counting Sort [ref. GFG]
 function kthSmallest(Arr,k){
     let maxElement = Arr[0];
