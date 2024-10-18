@@ -1,0 +1,40 @@
+var maximumSwap = function(num) {
+    let number = num;
+    let li = [];
+    
+    while (number > 0) {
+        li.push(number % 10);
+        number = Math.floor(number / 10);
+    }
+
+    li.reverse();
+    let x = Math.max(...li);
+    
+    if (li[0] !== x) {
+        for (let i = li.length - 1; i >= 0; i--) {
+            if (x === li[i]) {
+                li[i] = li[0];
+                li[0] = x;
+                break;
+            }
+        }
+        return parseInt(li.join(''), 10);
+    } else {
+        let new_li = [...li].sort((a, b) => b - a);
+        for (let i = 0; i < li.length; i++) {
+            if (li[i] === new_li[i]) {
+                continue;
+            } else {
+                let large = i + 1;
+                for (let j = i + 1; j < li.length; j++) {
+                    if (li[large] <= li[j]) {
+                        large = j;
+                    }
+                }
+                [li[i], li[large]] = [li[large], li[i]];
+                break;
+            }
+        }
+        return parseInt(li.join(''), 10);
+    }
+};
