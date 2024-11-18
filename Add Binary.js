@@ -1,7 +1,7 @@
 /**
  * @param {string} a
  * @param {string} b
- * @return {string}
+ * @return string
  */
 var addBinary = function(a, b) {
     let result = [];
