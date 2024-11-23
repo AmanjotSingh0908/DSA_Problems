@@ -4,7 +4,7 @@ var findMiddleIndex = function(nums) {
     for(let i=0; i<nums.length; i++){
         total_sum += nums[i];
     }
-    for(let i=0; i<nums.length; i++){
+    for(let i=0; i<nums.length; i++){ 
         if(i != 0) left_sum += nums[i-1];
         if(total_sum - left_sum - nums[i] === left_sum){
             return i;
