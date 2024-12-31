@@ -40,3 +40,37 @@ public:
         return solve(0,0,freq,target);
     }
 };
+
+
+//Bottom Up Approach
+class Solution {
+    const int MOD = 1e9+7;
+public:
+    int numWays(vector<string>& words, string target) {
+        int k = words[0].size();
+        int m = target.length();
+        vector<vector<long long>> freq(26, vector<long long>(k));
+
+        for(int col = 0; col < k; col++) {
+            for (string &word : words) {
+                freq[word[col] - 'a'][col]++;
+            }
+        }
+
+        vector<vector<long long>> t(m + 1, vector<long long>(k + 1, 0));
+        t[0][0] = 1;
+
+        for(int i = 0; i <= m; i++) {
+            for(int j = 0; j <= k; j++) {
+                if (i < m && j < k) {
+                    t[i + 1][j + 1] = (t[i + 1][j + 1] + t[i][j] * freq[target[i] - 'a'][j]) % MOD;
+                }
+                if (j < k) {
+                    t[i][j + 1] = (t[i][j + 1] + t[i][j]) % MOD;
+                }
+            }
+        }
+
+        return t[m][k];
+    }
+};
