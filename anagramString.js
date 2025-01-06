@@ -25,3 +25,38 @@ t = 'mana'
 
 result = anagram(s,t)
 console.log(result)
+
+
+
+//Another way
+function areAnagrams(str1, str2) {
+    str1 = str1.toLowerCase().replace(/[^a-z]/g, '');
+    str2 = str2.toLowerCase().replace(/[^a-z]/g, '');
+
+    if (str1.length !== str2.length) {
+        return false;
+    }
+
+    const count1 = {};
+    const count2 = {};
+
+    for (let char of str1) {
+        count1[char] = (count1[char] || 0) + 1;
+    }
+
+    for (let char of str2) {
+        count2[char] = (count2[char] || 0) + 1;
+    }
+
+    for (let char in count1) {
+        if (count1[char] !== count2[char]) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+console.log(areAnagrams("listen", "silent"));  
+console.log(areAnagrams("hello", "world"));    
+console.log(areAnagrams("A gentleman", "Elegant man"));
