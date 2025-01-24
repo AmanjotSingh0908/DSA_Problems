@@ -8,6 +8,7 @@ public:
             dist[i][i] = 0;
         }
 
+        
         //fill distance matrix with given edge weights
         for(const auto& edge : edges){
             int u = edge[0], v = edge[1], w = edge[2];
