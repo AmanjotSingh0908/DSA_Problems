@@ -4,7 +4,7 @@ public:
 		// Declare variables
         int n = nums.size(), i = 0, t = k;
 		// Answer Array
-        vector<int> ans;
+        vector<int> ans; 
 		
 		// Put first k elements
         while(t>0){
