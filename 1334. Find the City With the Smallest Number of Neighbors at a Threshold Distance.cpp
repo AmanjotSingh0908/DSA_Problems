@@ -4,7 +4,7 @@ public:
         vector<vector<int>> dist(n, vector<int>(n, INT_MAX));
 
         //set diagonal to 0
-        for(int i=0; i<n; ++i){
+        for(int i=0; i<n; ++i){ 
             dist[i][i] = 0;
         }
 
