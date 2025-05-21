@@ -1,24 +1,25 @@
-/**
- * @param {string} s
- * @param {number} numRows
- * @return {string}
- */
-var convert = function(s, numRows) {
-    if(numRows === 1 || s.length < numRows) return s;
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        if (numRows == 1 || s.length() < numRows)
+            return s;
 
-    let direction = false;
-    let count = 0;
+        std::vector<std::string> rows(numRows, "");
+        int count = 0;
+        bool direction = false;
 
-    let arr = new Array(numRows).fill("");
+        for (char c : s) {
+            rows[count] += c;
+            if (count == 0 || count == numRows - 1)
+                direction = !direction;
+            count += direction ? 1 : -1;
+        }
 
-    for(let i = 0; i < s.length; i++){
-        let curr = s[i];
+        std::string result;
+        for (const std::string& row : rows) {
+            result += row;
+        }
 
-        arr[count] += curr;
-        if(count == 0 || count >= numRows - 1) direction = !direction
-        direction ? count++ : count--;
+        return result;
     }
-
-    return arr.join("");
-    
 };
