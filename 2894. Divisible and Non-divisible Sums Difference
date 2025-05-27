@@ -6,12 +6,12 @@
 var differenceOfSums = function(n, m) {
     let divisibleByM = 0;
     let nondivisibleByN = 0;
-    for(let i = 1; i < n; i++){
+    for(let i = 1; i <= n; i++){
         if(i % m == 0){
             divisibleByM += i;
         } else {
             nondivisibleByN += i;
         }
     }
-    return abs(divisibleByM -nondivisibleByN)
+    return (- divisibleByM + nondivisibleByN)
 };
