@@ -4,7 +4,7 @@
 using namespace std;
 
 int main() {
-    int N, F;
+    int N, F; 
     cin >> N >> F;
 
     int currentNode = 1;
