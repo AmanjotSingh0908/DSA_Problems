@@ -22,3 +22,11 @@ public:
         return (t1->val == t2->val) && isMirror(t1->left, t2->right)  && isMirror(t1->right, t2->left);
     }
 };
+
+/*
+SYMMETRIC 
+A binary tree is symmetric if the left subtree is a mirror reflection of the right subtree.
+So for a tree to be symmetric:
+The left child of the left subtree must equal the right child of the right subtree.
+The right child of the left subtree must equal the left child of the right subtree.
+*/
