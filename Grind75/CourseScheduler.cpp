@@ -1,3 +1,16 @@
+/*
+Build the adjacency list for the graph.
+Calculate indegree (number of prerequisites) for each node.
+Push all nodes with indegree 0 into a queue (they can be taken immediately).
+Process the queue:
+    Pop a node.
+    Add it to your topological order.
+    For each of its neighbors, reduce their indegree.
+    If a neighbor’s indegree hits 0, push it into the queue.
+
+If you processed all nodes, you have a valid topological order.
+If not, there was a cycle, so no valid ordering exists.
+*/
 class Solution {
 public:
     bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
