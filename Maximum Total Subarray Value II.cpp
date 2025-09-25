@@ -1,4 +1,4 @@
 /*
 Use of conrtibution technique : DS + extension
-Use of priority queue
+Use of priority queue + sparse table
 */

@@ -50,4 +50,6 @@ public:
 };
 /*
 https://codeforces.com/blog/entry/68953
+
+Time Complexity: O(n × log(max_value)) - about O(n × 30) for this problem Space Complexity: O(log(max_value)) - about O(30) for the basis array
 */
